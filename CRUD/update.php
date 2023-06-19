@@ -25,10 +25,10 @@ include 'config.php';
             <input type="text" class="form-control" name="address" id="floatingPassword" placeholder="Your complete address" autocomplete="off" required>
             <label for="floatingPassword">Address</label>
         </div>
-        <div class="form-floating mb-3 w-50">
-            <input type="text" class="form-control" name="class" id="floatingAddress" placeholder="Your class" autocomplete="off" required>
-            <label for="floatingAddress">Class</label>
-        </div>
+        <select class="form-select mb-3 w-50" name="class" aria-label="Default select example" required>
+            <option selected disabled>Class</option>
+            
+        </select>
         <div class="form-floating mb-3 w-50">
             <input type="tel" class="form-control" name="phone" id="floatingPhone" placeholder="Your phone number" autocomplete="off" required>
             <label for="floatingPhone">Phone</label>
