@@ -1,7 +1,18 @@
 <?php
 include 'header.php';
-include 'config.php';
 
+if(isset($_POST['send'])){
+    $phone =$_POST['phone'];
+    $name =$_POST['name'];
+    $address =$_POST['address'];
+    $course =$_POST['course'];
+
+    $insert = "INSERT INTO `studentrecord` (`name`, `address`, `course`, `phone`) VALUES ('$name', '$address', '$course', '$phone')";
+    $result = mysqli_query($conn,$insert);
+    if($result){
+        header("Location: index.php");
+    }
+}
 
 ?>
 
@@ -16,16 +27,25 @@ include 'config.php';
             <input type="text" class="form-control" name="address" id="floatingPassword" placeholder="Your complete address" autocomplete="off" required>
             <label for="floatingPassword">Address</label>
         </div>
-        <select class="form-select mb-3 w-50" name="class" aria-label="Default select example" required>
-                    <option disabled>Class</option>
-                    
-                    <option value=''>IT</option>
-                    <option value=''>CS</option>
-                    <option value=''>SE</option>
-                    <option value=''>BSCS</option>
+        <select class="form-select mb-3 w-50" name="course" aria-label="Default select example" required>
+            <option selected disabled>Courses</option>
 
-                   
-                </select>
+            <?php
+            $courses = "SELECT * FROM  `courses`";
+            $coursesResult = mysqli_query($conn, $courses);
+
+            while ($row = mysqli_fetch_assoc($coursesResult)) {
+
+
+            ?>
+
+                <option value='<?php echo $row['cid']?>'> <?php echo $row['cname']?> </option>
+
+            <?php
+            }
+            ?>
+
+        </select>
         <div class="form-floating mb-3 w-50">
             <input type="tel" class="form-control" name="phone" id="floatingPhone" placeholder="Your phone number" autocomplete="off" required>
             <label for="floatingPhone">Phone</label>
@@ -38,4 +58,5 @@ include 'config.php';
 
 </div>
 </body>
+
 </html>

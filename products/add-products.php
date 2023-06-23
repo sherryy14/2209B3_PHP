@@ -1,6 +1,10 @@
 <?php 
 $conn = mysqli_connect('localhost','root','','2209b3form');
 
+session_start();
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+  }
 
 if(isset($_POST['submit'])){
     $title = $_POST['title'];
