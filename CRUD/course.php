@@ -13,6 +13,7 @@ if(isset($_POST['add'])){
 
 
 <div class="container bg-body-tertiary py-5">
+    
     <form method="post" class="d-flex justify-content-center flex-column align-items-center">
         <div class="form-floating mb-3 w-50">
             <input type="text" class="form-control" name="name" id="floatingInput" placeholder="Course Name" autocomplete="off" required>

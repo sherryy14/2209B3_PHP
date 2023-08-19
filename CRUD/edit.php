@@ -33,7 +33,7 @@ if(isset($_POST['update'])){
              
 
                 <div class="form-floating mb-3 w-50">
-                    <input type="text" class="form-control" name="name" value=' <?php echo $row['name']?>' id="floatingInput" placeholder="Your full name" autocomplete="off">
+                    <input type="text" class="form-control" name="name" value='<?php echo $row['name']?>' id="floatingInput" placeholder="Your full name" autocomplete="off">
                     <label for="floatingInput">Name</label>
                 </div>
                 <div class="form-floating mb-3 w-50">
@@ -47,15 +47,13 @@ if(isset($_POST['update'])){
                     $courses = "SELECT * FROM `courses`";
                     $courseRes = mysqli_query($conn,$courses);
                     while($cRow = mysqli_fetch_array($courseRes)){
+                     
                         if($row['course'] == $cRow['cid']){
                             $select = 'selected';
                         }else{
-                            
                             $select = '';
                         }
-                   
                     ?>
-                    
                     <option <?php echo $select?> value='<?php echo $cRow[0]?>'><?php echo $cRow[1] ?></option>
                     
                     <?php 
