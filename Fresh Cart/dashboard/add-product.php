@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
         $stock = "Out Of Stock";
     }
 
-
+    
     $insert = "INSERT INTO `products` (`title`, `category`, `price`, `weight`, `code`, `status`, `availblity`, `unit`, `description`, `created_at`, `dimension`, `img1`, `img2`, `img3`, `img4`) VALUES ('$title', '$category', '$price', '$weight', '$code', '$status', '$stock', '$unit', '$description', current_timestamp(), '$dimension', '$img_name1', '$img_name2', '$img_name3', '$img_name4')";
     $result = mysqli_query($conn, $insert);
     if($result){

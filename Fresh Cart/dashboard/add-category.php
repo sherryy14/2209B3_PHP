@@ -16,6 +16,7 @@ if(isset($_POST['submit'])){
         move_uploaded_file($temp_name,"../assets/images/icons/$img_name" );
     }
 }
+
 ?>
 
                <!-- main -->
@@ -75,7 +76,7 @@ if(isset($_POST['submit'])){
                                         <!-- input -->
                                         <div class="mb-3 col-lg-6">
                                             <label class="form-label">Category Name</label>
-                                            <input type="text" class="form-control" name="cat_name" placeholder="Category Name"
+                                            <input type="text" class="form-control" id="name" name="cat_name" placeholder="Category Name"
                                                 required>
                                         </div>
                                      
@@ -101,6 +102,7 @@ if(isset($_POST['submit'])){
 
         </div>
   
+      
     <script src="../assets/libs/flatpickr/dist/flatpickr.min.js"></script>
     <!-- Libs JS -->
 <script src="../assets/libs/jquery/dist/jquery.min.js"></script>

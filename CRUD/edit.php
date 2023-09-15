@@ -4,6 +4,8 @@ $sid = $_GET['id'];
 
 $fetch = "SELECT * FROM `studentrecord` WHERE id  = $sid";
 $res = mysqli_query($conn,$fetch);
+$row = mysqli_fetch_assoc($res);
+
 
 
 if(isset($_POST['update'])){
@@ -25,11 +27,6 @@ if(isset($_POST['update'])){
 <div class="container bg-body-tertiary py-3">
     <h2>Update Records</h2>
     <form action="" method="post" class="d-flex justify-content-center flex-column align-items-center">
-
-    <?php 
-    $row = mysqli_fetch_assoc($res);
-    ?>
-
              
 
                 <div class="form-floating mb-3 w-50">

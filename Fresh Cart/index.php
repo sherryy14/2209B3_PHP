@@ -1,7 +1,8 @@
 <?php
 include 'header.php';
-?>
 
+
+?>
 
 <main>
   <section class="mt-8">
@@ -241,6 +242,7 @@ include 'header.php';
                     ?>
                       <span class="text-decoration-line-through text-muted">$<?php echo floor($row['price'] + (($row['price'] * 10) / 100)) ?></span>
                     <?php  } ?>
+                     
 
                   </div>
                   <div><a href="#!" class="btn btn-primary btn-sm">

@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
     }
 
 
-    $update = "UPDATE `products` SET title = $title, category = $category, price = $price, weight = $weight, code = $code, status= $status, availblity= $stock, unit = $unit, description= $description, dimension = $dimension, img1 = $img_name1, img2 = $img_name2, img3 = $img_name3, img4 = $img_name4";
+    $update = "UPDATE `products` SET title = '$title', category = '$category', price = '$price', weight = $weight, code = $code, status= $status, availblity= $stock, unit = $unit, description= $description, dimension = $dimension, img1 = $img_name1, img2 = $img_name2, img3 = $img_name3, img4 = $img_name4";
 
     $res = mysqli_query($conn, $update);
 
